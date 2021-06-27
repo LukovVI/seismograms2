@@ -6,6 +6,9 @@ import os
 import cv2
 import numpy as np
 from PIL import Image, ImageDraw
+import datetime
+import schedule
+import time
 
 def png_jpg(str):
     image = Image.open(str + ".png")
@@ -24,10 +27,14 @@ def png_jpg(str):
     print((img == 0).sum())
 
 def main():
-    for i in list(map(lambda x: x[0:-4], list(filter(lambda x: x.endswith(".png"), os.listdir())))):
-        png_jpg(i)
+    print(datetime.datetime.now().strftime("%d.%m.%Y %H:%M:%S"))
+    # for i in list(map(lambda x: x[0:-4], list(filter(lambda x: x.endswith(".png"), os.listdir())))):
+    #     png_jpg(i)
 
 
 
 if __name__ == '__main__':
-    main()
+    schedule.every(1).minute.do(main)
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
