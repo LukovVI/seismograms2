@@ -6,6 +6,7 @@ import openpyxl#pip install openpyxl
 import numpy as np#pip install numpy
 import requests#pip install requests
 import datetime
+#для преобразования в .exe файл прописать в командной строке pyinstaller proj_disp.py -F
 
 
 
