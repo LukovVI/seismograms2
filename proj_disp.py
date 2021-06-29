@@ -13,6 +13,7 @@ import time
 import schedule#pip install schedule
 import threading
 import sys
+#для преобразования в .exe файл прописать в командной строке pyinstaller proj_disp.py -F
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QFileDialog, QInputDialog
